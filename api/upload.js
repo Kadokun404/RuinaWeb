@@ -9,7 +9,7 @@
 
 export const config = { api: { bodyParser: false } };
 
-const BOT_TOKEN = process.env["TOKEN-TELE-STORAGE"];
+const BOT_TOKEN = process.env["TOKEN_TELE_STORAGE"];
 const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 const MAX_SIZE = 20 * 1024 * 1024; // 20MB
 
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
   if (!BOT_TOKEN || !CHAT_ID) {
     return res.status(500).json({
       ok: false,
-      error: "Server belum dikonfigurasi (TOKEN-TELE-STORAGE / TELEGRAM_CHAT_ID belum diset).",
+      error: "Server belum dikonfigurasi (TOKEN_TELE_STORAGE / TELEGRAM_CHAT_ID belum diset).",
     });
   }
 
