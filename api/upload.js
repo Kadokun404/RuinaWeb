@@ -4,7 +4,7 @@
 // Akses: POST /api/upload  (multipart/form-data, field "file")
 //
 // Env yang wajib diset di Vercel → Project Settings → Environment Variables:
-//   TOKEN-TELE-STORAGE   token bot Telegram (dari @BotFather)
+//   TOKEN_TELE_STORAGE   token bot Telegram (dari @BotFather)
 //   TELEGRAM_CHAT_ID     ID chat/channel tujuan dokumen dikirim
 
 export const config = { api: { bodyParser: false } };
