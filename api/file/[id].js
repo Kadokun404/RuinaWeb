@@ -2,9 +2,9 @@
 // Ambil file dari Telegram berdasarkan encoded file_id, lalu redirect ke file aslinya.
 // Akses: GET /api/file/:id
 //
-// Env: TOKEN-TELE-STORAGE
+// Env: TOKEN_TELE_STORAGE
 
-const BOT_TOKEN = process.env["TOKEN-TELE-STORAGE"];
+const BOT_TOKEN = process.env["TOKEN_TELE_STORAGE"];
 
 export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   const { id } = req.query;
   if (!id) return res.status(400).json({ ok: false, error: "File ID wajib diisi." });
   if (!BOT_TOKEN) {
-    return res.status(500).json({ ok: false, error: "Server belum dikonfigurasi (TOKEN-TELE-STORAGE belum diset)." });
+    return res.status(500).json({ ok: false, error: "Server belum dikonfigurasi (TOKEN_TELE_STORAGE belum diset)." });
   }
 
   try {
